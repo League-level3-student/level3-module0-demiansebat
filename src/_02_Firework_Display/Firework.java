@@ -11,57 +11,71 @@ import java.util.Random;
  */
 
 public class Firework{
+	public static void main(String[] args) {
+	
+	}
+	
+		
+	
     public static final int GRAVITY = 1;
 
     // 1. Create an array of Spark objects called sparks. Don't initialize it.
-
+Spark[]sparks;
     public boolean dead = false;
 
     public Firework() {
         // 2. Initialize the Spark array to contain 100 Sparks. 
-
+Spark[]sparks= new Spark[100];
 
         // 3. Iterate through the sparks and initialize each one to a new Spark.
         //    Make each spark start at the middle bottom of the screen.
 
-    }
 
+for (int i = 0; i < sparks.length; i++) {
+	sparks[i]= new Spark(130+i*150,750);
+
+}
+
+
+
+    }
+	
     public void launch() {
         // 4. Iterate through the sparks and reset their x and y location
         //    to their original starting point.
 
     }
-
+	
     public void updateSparks() {
         // 8. Uncomment this code. See if you can understand what it is doing.
 
-        // for(int i = 0; i < sparks.length; i++) {
-        // 
-        //     Spark s = sparks[i];
-        //     s.x += s.xVelocity;
-        //     s.y += s.yVelocity;
+         for(int i = 0; i < sparks.length; i++) {
+        
+          //    s.x += s.xVelocity;
+           // s.y += s.yVelocity;
         //     s.yVelocity += GRAVITY;
         // 
-        //     if(s.yVelocity >= 0 && !s.fire) {
-        //         Random r = new Random();
+        //   if(s.yVelocity >= 0 && !s.fire) {
+            //     Random r = new Random();
         //         s.xVelocity = r.nextInt(40) - 20;
-        //         s.yVelocity += -r.nextInt(10) - 5;
-        //         s.size = r.nextInt(7) + 2;
-        //         s.fire = true;
-        //     }
-        // 
-        //     if(s.y >= FireworkDisplay.HEIGHT) {
-        //         s.dead = true;
+          //       s.yVelocity += -r.nextInt(10) - 5;
+            //     s.size = r.nextInt(7) + 2;
+              //   s.fire = true;
+          //   }
+         
+           //  if(s.y >= FireworkDisplay.HEIGHT) {
+             //    s.dead = true;
         //     }
         // }
-        // 
-        // for(int i = 0; i < sparks.length; i++) {
-        //     if(!sparks[i].dead) {
-        //         dead = false;
-        //         break;
-        //     }
-        //     dead = true;
-        // }
+         
+      //  for(int i = 0; i < sparks.length; i++) {
+           //  if(!sparks[i].dead) {
+          //       dead = false;
+          //       break;
+          //   }
+         //    dead = true;
+         }
+    	
     }
 
     public void drawSparks(Graphics g) {
