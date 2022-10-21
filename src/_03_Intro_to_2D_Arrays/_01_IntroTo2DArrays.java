@@ -15,9 +15,11 @@ int[][] array=new int[3][3];
 						i=i+1;
 				System.out.println(array[1][2]);
 				array[1][2]= array [1][2]+1;
+				System.out.println(array[1][2]);
 			}
 		}
         // 3. print the third element from the second 1D array (2DArray[1][2])
+        
 
         // 4. set the third element from the second 1D array to a different
         //    value

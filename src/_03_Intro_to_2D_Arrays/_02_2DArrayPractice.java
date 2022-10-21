@@ -31,7 +31,7 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     public Integer[][] test1() {
-        
+        Integer[][] test1= new Integer[3][3];
         return null;
     }
     
@@ -41,7 +41,7 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        
+    	 String[][] test1= new String[2][4];
         return null;
     }
     
@@ -54,7 +54,7 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
+    	 Boolean[][] test1= new Boolean[5][2];
         return null;
     }
     
@@ -64,11 +64,13 @@ public class _02_2DArrayPractice {
      * 
      * int[][] grid = new int[2][3];
      * 
+     * 5,6,0
+     * 1,8,2
+     * 
      * 
      * 
      * Show your teacher the grid you created
      */
-    
     /*
      * Draw the grid of values for the following 2D array of Robots
      * Assume all the elements in the 2D array are initialized.
@@ -76,6 +78,10 @@ public class _02_2DArrayPractice {
      * Robot[][] robots = new Robot[4][2];
      * 
      * 
+     * r,r
+     * r,r
+     * r,r
+     * r,r
      * 
      * Show your teacher the grid you created
      */
@@ -87,7 +93,7 @@ public class _02_2DArrayPractice {
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
         
-        return null;
+        return objects[2][4];
     }
     
     /* Given the array of Objects below, return the element that is not null
@@ -97,7 +103,7 @@ public class _02_2DArrayPractice {
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
         
-        return null;
+        return objects[1][3];
     }
     
     /*
@@ -106,7 +112,13 @@ public class _02_2DArrayPractice {
      */
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
+        for (int i = 0; i < nums[0].length; i++) {
+        	int sum=0;
+        	sum=sum+i;
+ 
+           	System.out.println(sum);
+        }
+
         return null;
     }
     
