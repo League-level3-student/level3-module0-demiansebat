@@ -1,8 +1,12 @@
 package _04_Crazy_Digital_Painting;
 
-public class CrazyDigitalPainting {
-    // 1. Create two final static integers for the width and height of the display.
+import java.awt.Color;
 
+public class CrazyDigitalPainting {
+	Color[][] paint= new Color[WIDTH][HEIGHT];
+    // 1. Create two final static integers for the width and height of the display.
+final static int WIDTH=600;
+final static int HEIGHT=600;
 
     // 2. Create a 2D array of Color objects. You will need to import
     //    java.awt.Color. Initialize the size of the array using the 

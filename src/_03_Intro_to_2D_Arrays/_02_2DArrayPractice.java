@@ -114,7 +114,7 @@ public class _02_2DArrayPractice {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
         for (int i = 0; i < nums[0].length; i++) {
         	int sum=0;
-        	sum=sum+i;
+        	sum=sum+nums[0][i];
  
            	System.out.println(sum);
         }
@@ -128,25 +128,34 @@ public class _02_2DArrayPractice {
      */
     public Integer test7() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
+        for (int i = 0; i < nums[0].length; i++) {
+				int sum=0;
+				sum=sum+nums[0][i];
+				System.out.println(sum);
+			}
         return null;
     }
-    
     /*
      * Write an algorithm to return the sum of all the numbers in the
      * specified row
      */
     public Integer getSumByRow(int[][] matrix, int row) {
-        
-        return null;
+    	        int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
+    	        for (int i = 0; i < nums[i].length; i++) {
+    	        for (int j = 0; j < nums[j].length; j++) {
+    	        	int sum=0;
+    	        	sum=sum+nums[i][j];
+    	           	System.out.println(sum);
+    	        }
+    	        }
+    	        return null;
     }
-    
     /*
      * Write an algorithm to return the sum of all the numbers in the
      * specified column
      */
     public Integer getSumByColumn(int[][] matrix, int col) {
-        
+        //same this as above but with sum=sum+nums[j][i];
         return null;
     }
     
