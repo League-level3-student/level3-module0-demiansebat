@@ -31,14 +31,14 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// 2. Calculate the cell size.
 		cellSize = w / cpr;
 		// 3a. Initialize the cell array to the appropriate size.
-		Cell[][] cells = new Cell[cpr][cpr];
+	cells = new Cell[cpr][cpr];
 		// 3b. Iterate through the array and initialize each cell.
 		// Don't forget to consider the cell's dimensions when
 		// passing in the location.
 		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells.length; j++) {
 
-				cells[i][j] = new Cell(i, j, cellSize);
+				cells[i][j] = new Cell(i*cellSize, j*cellSize, cellSize);
 
 			}
 		}
@@ -49,9 +49,9 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// 4. Iterate through each cell and randomly set each
 
 		// cell's isAlive member to true or false
+		Random living = new Random();
 		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells.length; j++) {
-				Random living = new Random();
 				cells[i][j].isAlive = living.nextBoolean();
 			}
 		}
@@ -87,8 +87,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// 6. Iterate through the cells and draw them all
 		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells.length; j++) {
-
-			g.drawRect(cells[i][j].getX(),cells[i][j].getY(),cellSize,cellSize);
+			cells[i][j].draw(g);
 				
 			}
 		}
@@ -117,7 +116,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// 8. check if each cell should live or die
 	for (int i = 0; i < cells.length; i++) {
 		for (int j = 0; j < cells.length; j++) {
-			cells[i][j].liveOrDie(i);
+			cells[i][j].liveOrDie(livingNeighbors[i][j]);
 			
 			
 		}
@@ -171,8 +170,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		e.getX();
-		e.getY();
+	
 	}
 
 	@Override
@@ -194,7 +192,11 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// cellSize, meaning it's possible to click inside of a cell. You
 		// have to determine the cell that was clicked from the pixel
 		// location and toggle the 'isAlive' variable for that cell.
-		
+		int mouseX=e.getX();
+		int mouseY=e.getY();
+		int cellX= mouseX/cellSize;
+		int cellY= mouseY/cellSize;
+		cells[cellX][cellY].isAlive=true;
 
 
 
