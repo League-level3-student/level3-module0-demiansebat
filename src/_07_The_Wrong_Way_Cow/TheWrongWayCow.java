@@ -71,7 +71,7 @@ public class TheWrongWayCow {
     	int leftX=0;
     	int leftY=0;
 for (int i = 0; i < field.length; i++) {
-	for (int j = 0; j < field.length; j++) {
+	for (int j = 0; j < field[i].length; j++) {
 		
 		if ( i+2<field.length && field[i][j]=='c' && field[i+1][j]=='o' && field[i+2][j]=='w') {
 			up++;
@@ -83,23 +83,34 @@ for (int i = 0; i < field.length; i++) {
 			downX=j;
 			downY=i;
 		}
-		if ( j+2<field.length && field[i][j]=='c' && field[i][j+1]=='o' && field[i][j+2]=='w') {
+		if ( j+2<field[i].length && field[i][j]=='c' && field[i][j+1]=='o' && field[i][j+2]=='w') {
 			right++;
 			rightX=j;
 			rightY=i;
 		}
-		if ( j-2>0 && field[i][j]=='c' && field[i][j-1]=='o' && field[i][j-2]=='w') {
+		if ( j-2>=0 && field[i][j]=='c' && field[i][j-1]=='o' && field[i][j-2]=='w') {
 			left++;
 			leftX=j;
 			leftY=i;
 		}
 		
-		
 	}
 }
 			
 		
-
-        return null;
+if (up==1) {
+    return new int[]{upX,upY};
+}
+if (down==1) {
+    return new int[]{downX,downY};
+}
+if(right==1) {
+    return new int[]{rightX,rightY};
+}
+if(left==1) {
+    return new int[]{leftX,leftY};
+}
+return null;
     }
+  
 }
